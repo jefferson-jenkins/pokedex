@@ -2,7 +2,7 @@
 //  Pokemon.swift
 //  Pokedex
 //
-//  Created by Jefferson Setiawan on 1/13/17.
+//  Created by Jefferson Setiawan on 1/13/17..
 //  Copyright © 2017 Jefferson Setiawan. All rights reserved.
 //
 
