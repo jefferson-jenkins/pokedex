@@ -1,1 +1,1 @@
-Lorme ipsum
+Lorem Ipsum
