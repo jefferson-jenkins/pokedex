@@ -7,6 +7,12 @@ pipeline {
                 sh 'printenv'
             }
         }
+        stage('Feature') {
+            when { branch "feature/*" }
+            steps {
+                echo 'Feature steps only'
+            }
+        }
         stage('Example') {
             steps {
                 echo branch
