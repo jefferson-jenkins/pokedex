@@ -10,7 +10,7 @@ pipeline {
         stage('Example') {
             steps {
                 echo 'Hello World'
-                echo ${env.BRANCH_NAME}
+                echo "${env.BRANCH_NAME}"
             }
         }
     }
