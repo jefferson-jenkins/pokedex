@@ -1,30 +1,23 @@
 pipeline {
     agent any
-    triggers {
-        pollSCM('* * * * *')
-    }
     stages {
         stage('Check diff') {
             steps {
-                checkout(
-                    [
-                        $class: 'GitSCM', 
-                        branches: [
-                            [name: '*/master'], 
-                            [name: 'origin/features/*']
-                        ], 
-                        doGenerateSubmoduleConfigurations: false, 
-                        extensions: [], 
-                        submoduleCfg: [], 
-                        userRemoteConfigs: [[url: 'git@github.com:jeffersonsetiawan/pokedex.git']]
-                    ]
-                )
+                checkout scm
                 sh 'printenv'
+            }
+        }
+        stage('Feature') {
+            when { branch "feature/*" }
+            steps {
+                echo 'Feature steps only'
             }
         }
         stage('Example') {
             steps {
+                echo branch
                 echo 'Hello World'
+                echo "${env.BRANCH_NAME}"
             }
         }
     }
