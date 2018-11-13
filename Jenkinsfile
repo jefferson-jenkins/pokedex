@@ -31,17 +31,8 @@ pipeline {
       }
     }
     stage('Finish') {
-      parallel {
-        stage('Finish') {
-          steps {
-            echo 'Finish'
-          }
-        }
-        stage('Test') {
-          steps {
-            echo 'Test'
-          }
-        }
+      steps {
+        echo 'Finish'
       }
     }
   }
