@@ -1,12 +1,8 @@
 pipeline {
     agent any
-    triggers {
-        pollSCM('* * * * *')
-    }
     stages {
         stage('Check diff') {
             steps {
-                checkout scm
                 checkout(
                     [
                         $class: 'GitSCM', 
