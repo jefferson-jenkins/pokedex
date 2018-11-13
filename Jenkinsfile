@@ -3,25 +3,14 @@ pipeline {
     stages {
         stage('Check diff') {
             steps {
-                checkout(
-                    [
-                        $class: 'GitSCM', 
-                        branches: [
-                            [name: '*/master'], 
-                            [name: 'origin/features/*']
-                        ], 
-                        doGenerateSubmoduleConfigurations: false, 
-                        extensions: [], 
-                        submoduleCfg: [], 
-                        userRemoteConfigs: [[url: 'git@github.com:jeffersonsetiawan/pokedex.git']]
-                    ]
-                )
+                checkout scm
                 sh 'printenv'
             }
         }
         stage('Example') {
             steps {
                 echo 'Hello World'
+                echo ${env.BRANCH_NAME}
             }
         }
     }
