@@ -10,9 +10,8 @@ pipeline {
     FASTLANE_EXPLICIT_OPEN_SIMULATOR = 2
   }
   stages {
-    stage('Check diff') {
+    stage('Print Env') {
       steps {
-        checkout scm
         sh 'printenv'
       }
     }
