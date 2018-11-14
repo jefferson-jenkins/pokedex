@@ -5,7 +5,6 @@ pipeline {
       steps {
         checkout scm
         sh 'printenv'
-        sh 'HOCKEY_API_TOKEN'
         echo "${HOCKEY_API_TOKEN}"
       }
     }
