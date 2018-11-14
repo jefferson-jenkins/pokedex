@@ -5,7 +5,7 @@ pipeline {
       steps {
         checkout scm
         sh 'printenv'
-        sh 'echo HOCKEY_API_TOKEN'
+        sh 'echo $HOCKEY_API_TOKEN'
       }
     }
     stage('Feature') {
