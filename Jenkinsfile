@@ -1,14 +1,19 @@
 pipeline {
   agent any
   environment {
-    HOCKEY_API_TOKEN_ENV = credentials('HOCKEY_API_TOKEN')
+    DEVELOPER_DIR = '/Applications/Xcode.app/Contents/Developer'
+    KEYCHAIN_NAME = credentials('KEYCHAIN_NAME')
+    KEYCHAIN_PASSWORD = credentials('KEYCHAIN_PASSWORD')
+    MATCH_PASSWORD = credentials('MATCH_PASSWORD')
+    FASTLANE_PASSWORD = credentials('FASTLANE_PASSWORD')
+    HOCKEY_API_TOKEN = credentials('HOCKEY_API_TOKEN')
+    FASTLANE_EXPLICIT_OPEN_SIMULATOR = 2
   }
   stages {
     stage('Check diff') {
       steps {
         checkout scm
         sh 'printenv'
-        sh 'echo $HOCKEY_API_TOKEN_ENV'
       }
     }
     stage('Feature') {
