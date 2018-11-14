@@ -1,11 +1,14 @@
 pipeline {
   agent any
+  environment {
+    HOCKEY_API_TOKEN_ENV = credentials('HOCKEY_API_TOKEN')
+  }
   stages {
     stage('Check diff') {
       steps {
         checkout scm
         sh 'printenv'
-        sh 'echo $HOCKEY_API_TOKEN'
+        sh 'echo $HOCKEY_API_TOKEN_ENV'
       }
     }
     stage('Feature') {
