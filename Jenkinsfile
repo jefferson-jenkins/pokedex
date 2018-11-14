@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    HOCKEY_API_TOKEN_ENV = credentials('HOCKEY_API_TOKENZZZZ')
+    HOCKEY_API_TOKEN_ENV = credentials('HOCKEY_API_TOKEN')
   }
   stages {
     stage('Check diff') {
